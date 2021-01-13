@@ -1,0 +1,21 @@
+<div class="table-responsive mt-5">
+    <a ng-href="/product" class="btn btn-outline-success mb-2"><i class="fas fa-plus-circle"></i> Enter new product</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>Name</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Stock</th>
+            <th class="text-center">Status</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in products track by $index">
+                <td><a ng-href="/product/{{product.id}}/details">{{product.name}}</a></td>
+                <td class="text-right">{{product.price}}</td>
+                <td class="text-right">{{product.stock}}</td>
+                <td class="text-center"><i class="fas"
+                        ng-class="{'fa-check text-success': product.status,'fa-ban text-danger':!product.status}"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,22 @@
+<div class="card-columns mt-5">
+    <div class="card" ng-repeat="product in products track by $index" title="{{addTitle(product.status)}}">
+        <img src="/app/assets/images/image.png" class="card-img-top" alt="product">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <h4>{{product.price}}</h4>
+            <form class="form-inline">
+                <label class="my-1 mr-2" for="input-quantity">Quantity</label>
+                <input ng-model="cart[$index].quantity" ng-value="1" type="number" ng-disabled="product.status"
+                    class="form-control my-2 mr-sm-2" id="input-quantity" aria-describedby="stockHelpBlock" />
+                <small id="stockHelpBlock" class="form-text text-muted">
+                    {{product.stock}} available
+                </small>
+                <button type="submit" ng-disabled="product.status" class="btn btn-primary btn-block my-1">Add
+                    cart
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<form class="mt-5" ng-submit="submit()">
+    <div class="form-group">
+        <label for="input-name">Product</label>
+        <input type="text" ng-model="product.name" required class="form-control" id="input-name" placeholder="Product name" />
+    </div>
+    <div class="form-group">
+        <label for="input-price">Price</label>
+        <input type="text" ng-model="product.price" required class="form-control" id="input-price" placeholder="Price">
+    </div>
+    <div class="form-group">
+        <label for="input-stock">Stock</label>
+        <input type="number" ng-model="product.stock" required class="form-control" id="input-stock" placeholder="Stock">
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" ng-model="product.status" class="form-check-input" id="check-status">
+        <label class="form-check-label" for="check-status">Status</label>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
+</form>

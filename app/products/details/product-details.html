@@ -1,0 +1,14 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Name:</strong> {{product.name}}</li>
+            <li class="list-group-item"><strong>Price:</strong> {{product.price}}</li>
+            <li class="list-group-item"><strong>Stock:</strong> {{product.stock}}</li>
+            <li class="list-group-item"><strong>Status:</strong>
+                <span class="badge" ng-class="{'badge-success': product.status,'badge-danger':!product.status}">
+                    <i class="fas" ng-class="{'fa-check': product.status,'fa-ban':!product.status}"></i>
+                    {{product.status?'Active':'Inactive'}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
