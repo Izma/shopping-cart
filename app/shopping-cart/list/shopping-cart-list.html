@@ -1,0 +1,41 @@
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <th>
+                Product Name
+            </th>
+            <th>
+                Unit price
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                SubTotal
+            </th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in cart track by $index" {{push(item,$index)}}>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{getSubTotal(item,$index)}}</td>
+                <td>
+                    <button class="btn btn-danger" ng-click="removeProduct(item.id)">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{grandTotal}}</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

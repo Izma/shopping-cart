@@ -1,7 +1,8 @@
 (function () {
     'use strict';
     angular.module('myStoreApp', ['ngRoute'])
-        .config(function ($routeProvider, $locationProvider) {
+        .config(function ($routeProvider, $locationProvider, StorageProvider) {
+            StorageProvider.setSourceIdentifier('cart');
             $routeProvider
                 .when('/', {
                     controller: 'HomeController',
@@ -18,6 +19,10 @@
                 .when('/products', {
                     controller: 'ProductListController',
                     templateUrl: 'app/products/list/product-list.html'
+                })
+                .when('/shopping-cart', {
+                    controller: 'shoppingCartListController',
+                    templateUrl: 'app/shopping-cart/list/shopping-cart-list.html'
                 })
                 .otherwise('/');
             $locationProvider.html5Mode(true);

@@ -12,47 +12,29 @@
     <base href="/" />
 </head>
 
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <a class="navbar-brand" href="/">My<strong>Store</strong></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/"><i class="fas fa-home"></i> Home <span
-                                        class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/products">Products</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+<body style="padding-top: 70px;">
+    <div class="container-fluid" ng-controller="mainController">
+        <shopping-header></shopping-header>
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div ng-view> </div>
             </div>
         </div>
-
     </div>
     <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
     <script src="https://code.angularjs.org/1.8.2/angular-route.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/services/storage-provider.js"></script>
+    <script src="app/services/shopping-cart-service.js"></script>
     <script src="app/data/products-factory.js"></script>
+    <script src="app/main-controller.js"></script>
     <script src="app/home/home-controller.js"></script>
     <script src="app/products/list/product-list-controller.js"></script>
     <script src="app/products/details/product-details-controller.js"></script>
     <script src="app/products/product/product-controller.js"></script>
+    <script src="app/components/shopping-cart/shopping-cart-component.js"></script>
+    <script src="app/components/shopping-header/header-component.js"></script>
+    <script src="app/shopping-cart/list/shopping-cart-list-controller.js"></script>
 </body>
 
 </html>

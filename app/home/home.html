@@ -8,12 +8,13 @@
             <h4>{{product.price}}</h4>
             <form class="form-inline">
                 <label class="my-1 mr-2" for="input-quantity">Quantity</label>
-                <input ng-model="cart[$index].quantity" ng-value="1" type="number" ng-disabled="product.status"
-                    class="form-control my-2 mr-sm-2" id="input-quantity" aria-describedby="stockHelpBlock" />
+                <input ng-value="1" type="number" ng-disabled="product.status" class="form-control my-2 mr-sm-2"
+                    id="input-quantity" aria-describedby="stockHelpBlock" />
                 <small id="stockHelpBlock" class="form-text text-muted">
                     {{product.stock}} available
                 </small>
-                <button type="submit" ng-disabled="product.status" class="btn btn-primary btn-block my-1">Add
+                <button type="button" ng-click="addProduct(product)" ng-disabled="product.status"
+                    class="btn btn-primary btn-block my-1">Add
                     cart
                 </button>
             </form>
