@@ -13,6 +13,7 @@
             }
             $scope.addProduct = function (product) {
                 ShoppingCartService.addItem(product);
+                updateAvailability(product);
             };
             $scope.removeProduct = function (index) {
                 ShoppingCartService.remove(index);
@@ -22,5 +23,12 @@
                     $scope.cart = ShoppingCartService.getCart();
                 });
             });
+            function updateAvailability(product) {
+                let products = JSON.parse($window.localStorage.getItem('products'));
+                let p = products.find(p => p.id === product.id);
+                p.stock--;
+                $window.localStorage.setItem('products', JSON.stringify(products));
+                $scope.products = JSON.parse($window.localStorage.getItem('products'));
+            }
         });
 }());

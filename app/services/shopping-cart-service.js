@@ -49,6 +49,7 @@
             };
             this.clear = function () {
                 this.cart = {};
+                this.changeItems();
                 Storage.remove();
             };
             this.changeQuantity = function (id) {
